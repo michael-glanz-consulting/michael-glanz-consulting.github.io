@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Michael Glanz – Unternehmensberatung für Wachstum &amp; Effizienz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Michael Glanz – Strategische Unternehmensberatung für Wachstum, Struktur, Innovation und Effizienz." />
+
+  <style>
+    :root {
+      --bg: #05070a;
+      --bg-elevated: #0b1018;
+      --bg-soft: #111827;
+      --accent: #00e5ff;
+      --accent-soft: rgba(0, 229, 255, 0.18);
+      --accent-strong: #00c9ff;
+      --text: #f5f5f5;
+      --muted: #bfbfbf;
+      --border-subtle: #1f2933;
+      --error: #ff3860;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --shadow-glow: 0 0 18px rgba(0, 229, 255, 0.55);
+      --transition-fast: 0.18s ease-out;
+      --transition-med: 0.28s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020308 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER / NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 7, 10, 0.92),
+        rgba(5, 7, 10, 0.82),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      gap: 1.25rem;
+    }
+
+    .nav-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .logo-img {
+      height: 82px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      margin-right: 10px;
+      filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.45));
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #ffffff, var(--accent-strong));
+      box-shadow: var(--shadow-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #020617;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-title {
+      font-size: 0.98rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .brand-subtitle {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      padding-bottom: 0.15rem;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      box-shadow: 0 0 6px rgba(0, 229, 255, 0.8);
+      transition: width var(--transition-med);
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      background: radial-gradient(circle at top, var(--accent-soft), transparent);
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-glow);
+      background: radial-gradient(circle at top, rgba(0, 229, 255, 0.24), transparent);
+      border-color: var(--accent);
+    }
+
+    /* MOBILE NAV */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 4px 0;
+      background: var(--text);
+      border-radius: 999px;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    @media (max-width: 860px) {
+      .nav-right {
+        gap: 0.6rem;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        inset: 60px 1.5rem auto 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.2rem;
+        border-radius: var(--radius-lg);
+        background: rgba(15, 23, 42, 0.98);
+        box-shadow: var(--shadow-soft);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        z-index: 39;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 3.2rem 0 3.4rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .eyebrow span {
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #ffffff, var(--accent-strong));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .badge-accent {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: radial-gradient(circle at top, var(--accent-soft), transparent);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.35);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      border: none;
+      padding: 0.95rem 1.7rem;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: linear-gradient(135deg, #ffffff 0%, #9be7ff 35%, var(--accent-strong) 100%);
+      color: #020617;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 16px 38px rgba(0, 201, 255, 0.28);
+      transition: transform var(--transition-med), box-shadow var(--transition-med),
+        filter var(--transition-med);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.01);
+      filter: brightness(1.04);
+      box-shadow: 0 22px 44px rgba(0, 201, 255, 0.38);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.95rem 1.45rem;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(148, 163, 184, 0.38);
+      background: rgba(15, 23, 42, 0.72);
+      color: #e5e7eb;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: border-color var(--transition-fast), color var(--transition-fast),
+        background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(0, 229, 255, 0.6);
+      color: #ffffff;
+      background: rgba(15, 23, 42, 0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* HERO – RIGHT SIDE PANEL */
+    .hero-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.98),
+        #020617
+      );
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.2rem 1.3rem 1.3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      right: -10%;
+      top: -25%;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(0, 229, 255, 0.18), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .hero-card-pill {
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-pill-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 6px rgba(34, 197, 94, 0.9);
+      margin-right: 0.35rem;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 0.8rem;
+      align-items: flex-start;
+      margin-top: 0.4rem;
+    }
+
+    .hero-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-highlight {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e5e7eb;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-mini {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .chip-strong {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .hero-metric-box {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.95);
+      padding: 0.95rem 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      width: 100%;
+    }
+
+    .metric-row {
+      display: block;
+      margin-bottom: 0.9rem;
+    }
+
+    .metric-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .metric-label {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.68rem;
+      color: #64748b;
+      line-height: 1.35;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric-value {
+      display: block;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      text-align: left;
+      line-height: 1.45;
+      white-space: normal;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    /* SECTION WRAPPER */
+    section {
+      padding: 2.8rem 0 2.6rem;
+    }
+
+    section:nth-of-type(even) {
+      background: radial-gradient(circle at top left, #020617, #000000 70%);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title-block {
+      max-width: 28rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 26rem;
+    }
+
+    /* GRID CARDS */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+
+    .hero-title,
+    .hero-subtitle,
+    .hero-mini,
+    .hero-actions {
+      animation: fadeUp 0.7s ease-out both;
+    }
+
+    .hero-subtitle { animation-delay: 0.08s; }
+    .hero-mini { animation-delay: 0.14s; }
+    .hero-actions { animation-delay: 0.2s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2rem 0 2.4rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+
+      .hero-title {
+        font-size: clamp(1.7rem, 7vw, 2.2rem);
+        line-height: 1.15;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+        line-height: 1.55;
+      }
+
+      .hero-card {
+        padding: 1rem;
+        border-radius: 20px;
+      }
+
+      .hero-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+      }
+
+      .hero-card-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+
+      .hero-highlight {
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .hero-mini {
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+
+      .hero-chip-row {
+        gap: 0.35rem;
+      }
+
+      .chip {
+        font-size: 0.72rem;
+        line-height: 1.25;
+      }
+
+      .hero-metric-box {
+        padding: 0.85rem 0.9rem;
+        font-size: 0.76rem;
+      }
+
+      .metric-row {
+        gap: 0.6rem;
+        margin-bottom: 0.55rem;
+      }
+
+      .metric-label {
+        flex: 0 0 36%;
+        font-size: 0.64rem;
+        letter-spacing: 0.14em;
+      }
+
+      .metric-value {
+        font-size: 0.82rem;
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      .logo-img {
+        height: 44px;
+        margin-right: 6px;
+      }
+
+      .brand-title {
+        font-size: 0.78rem;
+      }
+
+      .brand-subtitle {
+        font-size: 0.72rem;
+      }
+
+      .hero-title {
+        font-size: clamp(1.5rem, 7.4vw, 1.95rem);
+      }
+
+      .hero-badges {
+        gap: 0.4rem;
+        margin-bottom: 1.3rem;
+      }
+
+      .badge {
+        font-size: 0.68rem;
+        padding: 0.25rem 0.55rem;
+        letter-spacing: 0.08em;
+      }
+
+      .hero-actions {
+        gap: 0.6rem;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 0.8rem 1rem;
+        letter-spacing: 0.08em;
+      }
+
+      .hero-card-title {
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+      }
+
+      .hero-card-pill {
+        font-size: 0.7rem;
+      }
+
+      .hero-tag {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+      }
+
+      .hero-highlight {
+        font-size: 0.9rem;
+      }
+
+      .hero-mini {
+        font-size: 0.78rem;
+      }
+
+      .hero-metric-box {
+        padding: 0.8rem;
+      }
+
+      .metric-label {
+        flex: 0 0 34%;
+        font-size: 0.6rem;
+      }
+
+      .metric-value {
+        font-size: 0.78rem;
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.85)
+      );
+      border: 1px solid var(--border-subtle);
+      padding: 1rem;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-med), box-shadow var(--transition-med),
+        border-color var(--transition-med), background var(--transition-med);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle at top, rgba(0, 229, 255, 0.16), transparent 40%);
+      opacity: 0;
+      transition: opacity var(--transition-med);
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-soft);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9);
+      background: linear-gradient(
+        145deg,
+        rgba(15, 23, 42, 1),
+        rgba(15, 23, 42, 0.96)
+      );
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title span {
+      color: var(--accent);
+    }
+
+    .card-text {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .card-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-list li::before {
+      content: "▹";
+      color: var(--accent);
+      font-size: 0.8rem;
+      margin-top: 0.1rem;
+    }
+
+    /* SUCCESSION / MONITORING STRIP */
+    .strip {
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(148, 163, 184, 0.65);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.9rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .strip strong {
+      color: #e5e7eb;
+    }
+
+    .strip-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    @media (max-width: 640px) {
+      .strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* TEAM SECTION */
+    .team-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .team-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .timeline {
+      border-left: 1px solid rgba(148, 163, 184, 0.45);
+      padding-left: 1.3rem;
+      margin-top: 0.4rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 0.9rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.42rem;
+      top: 0.2rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(0, 229, 255, 0.9);
+    }
+
+    .timeline-role {
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      margin-bottom: 0.1rem;
+    }
+
+    .timeline-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-text {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .profile-card {
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, rgba(0, 229, 255, 0.03), #020617);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .profile-name {
+      font-size: 1rem;
+      color: #e5e7eb;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.7rem;
+    }
+
+    /* PROJEKTE SECTION */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .project-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.98),
+        rgba(15, 23, 42, 0.9)
+      );
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      right: -10%;
+      bottom: -30%;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(0, 229, 255, 0.2), transparent 70%);
+      opacity: 0.7;
+    }
+
+    .project-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      color: #e5e7eb;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .project-pill {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    /* KONTAKT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 880px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-form {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.95);
+      padding: 1.1rem 1rem 1.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .field {
+      margin-bottom: 0.9rem;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .field-input,
+    .field-textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text);
+      font-size: 0.88rem;
+      padding: 0.55rem 0.6rem;
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    .field-input::placeholder,
+    .field-textarea::placeholder {
+      color: #64748b;
+    }
+
+    .field-input:focus,
+    .field-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-soft);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .field-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-meta {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .contact-meta strong {
+      color: #e5e7eb;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 1rem 0 1.2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* wichtig: bleibt im STYLE, damit es NICHT als Text erscheint */
+    :target { scroll-margin-top: 160px; }
+    .innovation-header {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 1.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .innovation-header {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    
+    /* START-UP SECTION – Bild dominanter, Text kleiner */
+    .startup-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 3.2rem;
+      align-items: start;
+    }
+
+    .startup-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      max-width: 560px;
+    }
+
+    .startup-subline {
+      color: #bfc8d2;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .startup-box {
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(0,229,255,0.2);
+      background: rgba(17,24,39,0.45);
+      color: #d7dee6;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .startup-item h3 {
+      color: #00e5ff;
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .startup-item p {
+      color: #c7d0d9;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 30rem;
+    }
+
+
+
+
+  
+@media (max-width: 768px) {
+  .hero-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-metric-box {
+    width: 100%;
+  }
+
+  .metric-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .metric-label {
+    margin-bottom: 2px;
+  }
+
+  .metric-value {
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <div class="nav">
+          <div class="nav-left">
+            <img src="bilder/logo.png" alt="Michael Glanz Logo" class="logo-img">
+            <div class="brand-text">
+              <div class="brand-title">Strategische Beratung</div>
+              <div class="brand-subtitle">Kompetenz & Innovation</div>
+            </div>
+          </div>
+
+          <div class="nav-right">
+            <nav class="nav-links" id="nav-links">
+              <a href="#kompetenz">Kompetenz</a>
+              <a href="#innovation">Innovation</a>
+              <a href="#startup" style="white-space:nowrap;">Start-up</a>
+              <a href="#projekte">Projekte</a>
+              <a href="#team">Team</a>
+              <a href="#kontakt">Kontakt</a>
+</nav>
+
+            <button class="nav-cta" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+              Termin anfragen
+            </button>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Navigation öffnen/schließen">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO + CONTENT -->
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-inner">
+            <div>
+              <div class="eyebrow">
+                Strategische Unternehmensberatung &nbsp;•&nbsp; <span>Wachstum, Struktur &amp; Effizienz</span>
+              </div>
+
+              <img
+                src="bilder/michael-glanz-unternehmensberatung-innovation.png"
+                alt="Michael Glanz Unternehmensberatung Innovation Digitalisierung Strategie"
+                style="width:100%; max-width:760px; border-radius:18px; box-shadow:0 20px 40px rgba(0,0,0,0.45); display:block; margin:0 0 1.25rem 0;"
+              >
+
+              <h1 class="hero-title">
+                Michael Glanz – <span>Strategische Unternehmensberatung</span>
+              </h1>
+
+              <p class="hero-subtitle">
+                Ich unterstütze Unternehmen und Gründer dabei, klare Entscheidungen zu treffen, Strukturen aufzubauen und nachhaltig zu wachsen.
+              </p>
+              <p class="hero-mini">
+                Klarheit, Struktur und fundierte Entscheidungen für nachhaltiges Wachstum.
+              </p>
+
+              <div class="hero-badges">
+                <span class="badge badge-accent">Strategische Unternehmensberatung</span>
+                <span class="badge">Wachstum &amp; Skalierung</span>
+                <span class="badge">Struktur &amp; Effizienz</span>
+                <span class="badge">Industrieerfahrung &amp; Umsetzung</span>
+              </div>
+
+              <div class="hero-actions">
+                <button class="btn-primary" onclick="document.getElementById('kontakt').scrollIntoView({behavior:'smooth'})">
+                  Termin anfragen
+                </button>
+                <button class="btn-ghost btn-secondary" onclick="document.getElementById('kompetenz').scrollIntoView({behavior:'smooth'})">
+                  Leistungen ansehen
+                </button>
+              </div>
+
+              <div class="hero-meta">
+                <strong>Fokus:</strong> Mittelstand, Industrie und technologieorientierte Unternehmen – mit klarer strategischer Ausrichtung auf Wachstum, Struktur und unternehmerische Wirksamkeit.
+              </div>
+            </div>
+
+            <aside class="hero-card">
+              <div class="hero-card-header">
+                <div class="hero-card-title">Advisory Radar</div>
+                <div class="hero-card-pill">
+                  <span class="hero-pill-dot"></span> aktiv für 2025+
+                </div>
+              </div>
+
+              <div class="hero-card-grid">
+                <div>
+                  <div class="hero-tag">Strategische Schwerpunkte</div>
+                  <div class="hero-highlight">Wachstum · Struktur · strategische Umsetzung</div>
+                  <div class="hero-mini">
+                    Analyse, Priorisierung und Umsetzung – mit Blick auf Markt, Organisation, Führung und unternehmerische Wirkung.
+                  </div>
+
+                  <div class="hero-chip-row">
+                    <span class="chip chip-strong">Strategie</span>
+                    <span class="chip">Wachstum</span>
+                    <span class="chip">Effizienz</span>
+                    <span class="chip">Industrieerfahrung</span>
+                  </div>
+                </div>
+
+                <div class="hero-metric-box">
+                  <div class="metric-row">
+                    <span class="metric-label">Erfahrung</span>
+                    <span class="metric-value">&gt; 30 Jahre</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-label">Märkte</span>
+                    <span class="metric-value">DE · EU · USA · Asien</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-label">Schwerpunkte</span>
+                    <span class="metric-value">Strategie, Struktur, Wachstum</span>
+                  </div>
+                  <div class="metric-row">
+                    <span class="metric-label">Setup</span>
+                    <span class="metric-value">Individuelle Module</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- KOMPETENZ -->
+      <section id="kompetenz">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-eyebrow">Kompetenz</div>
+              <h2 class="section-title">Unternehmensberatung für Wachstum, Struktur & Effizienz</h2>
+            </div>
+            <p class="section-sub">
+Ich unterstütze Unternehmen dabei, Wachstum zu strukturieren, Komplexität zu reduzieren und klare strategische Entscheidungen zu treffen – mit Fokus auf Unternehmensentwicklung, Organisation und Effizienz.
+</p>
+          </div>
+
+          <p class="section-sub" style="margin-bottom:1.4rem; max-width: 46rem;">
+            Die folgenden Schwerpunkte bilden einen integrierten Beratungsansatz – von der strategischen Ausrichtung über Wachstum und Skalierung bis zur konkreten Umsetzung im Unternehmen.
+          </p>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-label">Schwerpunkt 01</div>
+              <h3 class="card-title"><span>Wachstum &amp; Skalierung</span> im Unternehmen</h3>
+              <p class="card-text">
+                Fokus auf nachhaltiges Wachstum, klare Strukturen und effiziente Prozesse – als Grundlage für unternehmerische Entwicklung und Skalierung.
+              </p>
+              <ul class="card-list">
+                <li>Wachstumsstrategien &amp; Skalierungskonzepte</li>
+                <li>Prozessoptimierung &amp; Effizienzsteigerung</li>
+                <li>Unternehmensanalyse &amp; Potenzialbewertung</li>
+                <li>Marktpositionierung &amp; Wettbewerbsstrategie</li>
+                <li>Priorisierung von Initiativen &amp; Maßnahmen</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-label">Schwerpunkt 02</div>
+              <h3 class="card-title"><span>Strategische Unternehmensausrichtung</span></h3>
+              <p class="card-text">
+                Wenn Wachstum, Organisation und Strategie nicht zusammenpassen, geht Wirkung verloren. Ziel ist eine klare, belastbare, umsetzbare Ausrichtung.
+              </p>
+              <ul class="card-list">
+                <li>Strategie-Workshops mit Management &amp; Schlüsselpersonen</li>
+                <li>Übersetzung von Vision und Zielen in konkrete Roadmaps</li>
+                <li>Aufbau von Entscheidungsregeln und Priorisierungslogiken</li>
+                <li>Begleitung bei der Umsetzung – nicht nur auf dem Papier</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-label">Schwerpunkt 03</div>
+              <h3 class="card-title"><span>Unternehmensnachfolge</span> &amp; Generationswechsel</h3>
+              <p class="card-text">
+                Begleitung von Unternehmensnachfolgen und Generationswechseln – als Mentor und Sparringspartner
+                für Unternehmerfamilien, Geschäftsführer und Nachfolger. Fokus auf Struktur, Strategie,
+                Produktportfolio und klare Rollen in der Übergabephase.
+              </p>
+              <ul class="card-list">
+                <li>Begleitung Übergabe Vater an Sohn / Tochter</li>
+                <li>Mentor &amp; Sparringspartner für Nachfolger</li>
+                <li>Analyse von Portfolio, Organisation und Strategie</li>
+                <li>Strukturierung der Übergabephase</li>
+                <li>Strategische Weiterentwicklung nach der Übergabe</li>
+              </ul>
+            </article>
+
+
+            <article class="card">
+              <div class="card-label">Schwerpunkt 04</div>
+              <h3 class="card-title"><span>Strategische Produktberatung</span> &amp; Portfolio</h3>
+              <p class="card-text">
+                Vom bestehenden Sortiment hin zu einem schlagkräftigen, zukunftsfähigen Portfolio – sauber strukturiert und auf Rendite und Differenzierung ausgerichtet.
+              </p>
+              <ul class="card-list">
+                <li>Portfolio-Analyse (Ertrag, Komplexität, Differenzierung)</li>
+                <li>Definition von Kern-, Zukunfts- und Auslaufprodukten</li>
+                <li>Architektur von modularen Produktplattformen</li>
+                <li>Entscheidungsvorlagen für Geschäftsführung &amp; Stakeholder</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-label">Schwerpunkt 05</div>
+              <h3 class="card-title">Industrieerfahrung &amp; <span>Systemkompetenz</span></h3>
+              <p class="card-text">
+                Fundierte Industrieerfahrung mit über 30 Jahren Praxis – insbesondere im Bereich Tür- und Torsysteme, X-Control sowie Klimatechnik. Diese Erfahrung bildet die Basis für strategische Beratung, die branchenübergreifend übertragbar ist.
+              </p>
+              <ul class="card-list">
+                <li>Systemkompetenz: Industrie- und Garagentore, Antriebe, Steuerungen</li>
+                <li>Normen, Sicherheit und Zulassungen im Blick</li>
+                <li>Skalierbare Konzepte für Serien- und Projektgeschäft</li>
+                <li>Brücke zwischen Technik, Vertrieb und Management</li>
+              </ul>
+            </article>
+          </div>
+
+          <p class="section-sub" style="margin-top: 1.8rem; max-width: 46rem;">
+            Ziel ist nicht Beratung um der Beratung willen – sondern messbare Ergebnisse: klarere Entscheidungen, effizientere Strukturen und nachhaltiges Wachstum im Unternehmen.
+          </p>
+
+          <div class="strip">
+            <div>
+              <strong>Start-up &amp; Skalierung im Fokus:</strong>
+              Geschäftsmodelle, Produkte und Strukturen so aufsetzen, dass sie tragfähig, finanzierbar und skalierbar sind – vom Markteintritt bis zur Wachstumsphase.
+            </div>
+            <div class="strip-pill">Strategie &amp; Sparring für Gründer</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INNOVATION -->
+      <section id="innovation">
+        <div class="container">
+          <div class="innovation-header">
+            <div>
+              <img
+                src="bilder/michael-glanz-unternehmensberatung-innovation.png"
+                alt="Michael Glanz Unternehmensberatung Innovation Digitalisierung Strategie"
+                style="width:100%; border-radius:18px; box-shadow:0 20px 40px rgba(0,0,0,0.45); display:block;"
+              >
+            </div>
+
+            <div>
+              <div class="section-eyebrow">Innovation</div>
+              <h2 class="section-title">Innovation, die nicht im Labor stecken bleibt.</h2>
+
+              <p class="section-sub" style="margin-top:0.8rem;">
+                Ideen gibt es viele. Entscheidend ist, welche Innovation wirklich in den Markt und zur Organisation passt – und wie sie industrialisiert wird.
+                Ich unterstütze dabei, Innovationsvorhaben zu priorisieren, Business Cases zu schärfen und die Umsetzung in klare Schritte zu übersetzen.
+                So entsteht aus einer Idee ein marktreifes Produkt – mit Plan, Ressourcenfokus und messbarer Wirkung.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-label">Modul A</div>
+              <h3 class="card-title">Innovations-Radar &amp; Roadmap</h3>
+              <p class="card-text">
+                Strukturierte Sicht auf Trends, Technologien und Marktbedürfnisse – übersetzt in eine klare, priorisierte Roadmap.
+              </p>
+              <ul class="card-list">
+                <li>Systematische Trend- &amp; Technologiebewertung</li>
+                <li>Abgleich mit Produktportfolio und Strategie</li>
+                <li>Definition von Innovationspfaden &amp; Projekten</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-label">Modul B</div>
+              <h3 class="card-title">Von der Idee in die <span>Serie</span></h3>
+              <p class="card-text">
+                Brücke zwischen F&amp;E, Produktmanagement, Fertigung und Markt – mit klarem Fokus auf Umsetzbarkeit und Business Case.
+              </p>
+              <ul class="card-list">
+                <li>Stage-Gate-Logik &amp; Entscheidungskriterien</li>
+                <li>Business Cases &amp; Szenarien in Klartext</li>
+                <li>Transfer von Prototypen in stabile Serienlösungen</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-label">Modul C</div>
+              <h3 class="card-title">Innovation &amp; <span>Produktgenerationen</span></h3>
+              <p class="card-text">
+                Produkt- und Führungsteams wollen ein belastbares, verständliches Setup. Innovation braucht Struktur, die erklärbar und skalierbar ist.
+              </p>
+              <ul class="card-list">
+                <li>Innovations-Portfolio für Produktgenerationen strukturieren</li>
+                <li>Risiken, Chancen &amp; Optionen klar benennen</li>
+                <li>Umsetzungsfähige Dokumentation &amp; Storyline</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      
+
+<!-- START-UP -->
+      <section id="startup">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-eyebrow">Start-up</div>
+              <h2 class="section-title">Start-up-Beratung – Markteintritt mit Struktur und Klarheit.</h2>
+            </div>
+            <p class="section-sub">
+              Professionelle Unterstützung für Gründerinnen und Gründer – wirtschaftlich fundiert, strategisch ausgerichtet und auf nachhaltiges Wachstum vorbereitet.
+            </p>
+          </div>
+
+          <div class="startup-grid">
+            <div>
+              <img
+                src="bilder/startup-beratung.png"
+                alt="Strategische Beratungssituation mit Analyse und Austausch am Tisch."
+                style="width:100%; border-radius:18px; box-shadow:0 30px 80px rgba(0,0,0,0.55); display:block;"
+              >
+            </div>
+
+            <div class="startup-content">
+              <div class="startup-item">
+                <h3>Struktur &amp; Geschäftsmodell</h3>
+                <p>Validierung, wirtschaftliche Tragfähigkeit und klare Ausrichtung – als Basis für belastbare Entscheidungen.</p>
+              </div>
+              <div class="startup-box">
+                Neben klassischen Beratungsprojekten unterstütze ich Unternehmen bei der Entwicklung neuer Produkte, der Erstellung von Lastenheften sowie bei strategischen und technischen Projektentwicklungen. Darüber hinaus arbeite ich an eigenen Produkt- und Projektideen, die gemeinsam mit Industriepartnern umgesetzt werden sollen.
+              </div>
+              <div class="startup-item">
+                <h3>Finanzielle Stabilität</h3>
+                <p>Liquiditätsplanung, Finanzierungsvorbereitung und Risikominimierung – damit Wachstum planbar bleibt.</p>
+              </div>
+              <div class="startup-item">
+                <h3>Strategische Positionierung</h3>
+                <p>Marktanalyse, Wettbewerbsstrategie und klare Prioritäten – um sich im Markt fokussiert zu etablieren.</p>
+              </div>
+              <div class="startup-item">
+                <h3>Entscheidungen &amp; Umsetzung</h3>
+                <p>Sparring und Entscheidungsvorlagen – pragmatisch, nachvollziehbar und mit Blick auf die nächsten Schritte.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM -->
+      <section id="team">
+        <div class="container">
+          <div style="margin-bottom:2.2rem; display:flex; justify-content:center;">
+            <img
+              src="bilder/team.png"
+              alt="Teamfoto"
+              style="
+                width:100%;
+                max-width:900px;
+                height:auto;
+                border-radius:18px;
+                box-shadow:0 30px 80px rgba(0,0,0,0.6);
+                display:block;
+              "
+            >
+          </div>
+
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-eyebrow">Team &amp; Profil</div>
+              <h2 class="section-title">Eine Person als Sparringspartner – mit Konzern- &amp; Mittelstands-Erfahrung.</h2>
+            </div>
+            <p class="section-sub">
+              Keine anonyme Beratungsmatrix, sondern ein erfahrener Ansprechpartner auf Augenhöhe, der Technik, Organisation und Unternehmensperspektive kennt.
+            </p>
+          </div>
+
+          <div class="team-layout">
+            <div>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-role">Leiter Gesamtentwicklung (Konzern) – Verantwortung für internationale Technologiezentren</div>
+                  <div class="timeline-meta">Deutschland, Indien, Singapur, USA – R&amp;D, Produktentwicklung, Systeme rund um Tür &amp; Tor.</div>
+                  <div class="timeline-text">Aufbau und Führung mehrerer Entwicklungsstandorte, Steuerung von Technologie- und Produktplattformen, Management komplexer internationaler Entwicklungsprojekte.</div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-role">Geschäftsführer &amp; Chief Innovation Officer</div>
+                  <div class="timeline-meta">Verantwortung für Ergebnis, Teams, Kunden und Innovationsagenda.</div>
+                  <div class="timeline-text">Verbindung von Geschäftsführung und Innovation – mit einem klaren Blick auf Markt, Technik, Organisation und Unternehmensinteressen.</div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-role">Selbstständige Beratung &amp; Sparring</div>
+                  <div class="timeline-meta">Strategische Produktberatung, „Rund um die Tür &amp; Tor“, Portfolio- &amp; Produktgenerationen.</div>
+                  <div class="timeline-text">Fokus auf Unternehmen, die ihr Produkt- und Unternehmens-Setup bewusst ausrichten, strukturieren und für die Zukunft vorbereiten.</div>
+                </div>
+              </div>
+            </div>
+
+            <aside class="profile-card">
+              <div class="profile-name">Michael Glanz</div>
+              <div class="profile-role">Beratung • Innovation • Struktur</div>
+              <p>Ich verbinde operative Erfahrung in Technik &amp; R&amp;D mit der Perspektive von Geschäftsführung und Produktorganisation. Mein Ansatz ist:</p>
+              <p style="margin-top:0.8rem;">
+                Neben der strategischen Produktberatung begleite ich auch Unternehmensnachfolgen in
+                technologieorientierten mittelständischen Unternehmen. Dabei sehe ich meine Rolle
+                weniger als klassischen Berater, sondern als erfahrener Sparringspartner und Mentor
+                für die nächste Generation – insbesondere bei der Übergabe von Verantwortung,
+                Produktstrategie, Organisation und Unternehmensstruktur.
+              </p>
+              <ul class="card-list" style="margin-top:0.6rem;">
+                <li>Klarheit und Struktur statt Buzzwords.</li>
+                <li>Konsequenter Fokus auf Wirkung und Umsetzbarkeit.</li>
+                <li>Offene, direkte Kommunikation – intern wie gegenüber Entscheiderkreisen.</li>
+              </ul>
+              <p style="margin-top:0.8rem;">Wenn Sie einen Sparringspartner suchen, der Projekte, Menschen und Verantwortung kennt, sprechen wir miteinander.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJEKTE -->
+      <section id="projekte">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-eyebrow">Projekte</div>
+              <h2 class="section-title">Ausgewählte Projekte mit Fokus auf Wachstum, Strategie & Umsetzung.</h2>
+            </div>
+            <p class="section-sub">
+              Ausgewählte Projektbeispiele aus der strategischen Beratung – mit Fokus auf Unternehmensentwicklung, Wachstum und belastbare Umsetzung.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-label">Beispielprojekt 01</div>
+              <h3 class="project-title">Strategieprojekt „Dem Wachstum Gestalt geben“ – Bever &amp; Klophaus</h3>
+              <div class="project-pill-row">
+                <span class="project-pill">Unternehmensstrategie</span>
+                <span class="project-pill">Marktsegmentierung</span>
+                <span class="project-pill">Wachstum</span>
+              </div>
+              <p>
+                Entwicklung einer ganzheitlichen Unternehmens-, Vertriebs- und Produktstrategie 2025 mit Fokus auf Marktsegmentierung, Portfolio-Optimierung, Positionierung und nachhaltige Wachstumsfelder. Die Umsetzung erfolgte über eine strukturierte Workshop-Architektur mit klarer Priorisierung von Märkten, Zielkunden, Geschäftsmodell und strategischen Maßnahmen.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-label">Beispielprojekt 02</div>
+              <h3 class="project-title">Produktstrategie für mittelständische Hersteller</h3>
+              <div class="project-pill-row">
+                <span class="project-pill">Produktstrategie</span>
+                <span class="project-pill">Roadmap</span>
+                <span class="project-pill">Positionierung</span>
+              </div>
+              <p>
+                Analyse bestehender Produktportfolios, Ableitung von Produktgenerationen, Bewertung von Marktchancen und Entwicklung klar priorisierter Roadmaps für Management und Vertrieb.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-label">Beispielprojekt 03</div>
+              <h3 class="project-title">Portfolioanalyse &amp; Vertriebsstruktur</h3>
+              <div class="project-pill-row">
+                <span class="project-pill">Analyse &amp; Roadmap</span>
+                <span class="project-pill">Vertriebsstrategie</span>
+                <span class="project-pill">Business Development</span>
+              </div>
+              <p>
+                Strukturierte Betrachtung von Sortiment, Ertragsbeiträgen und Marktlogik mit anschließender Entwicklung einer belastbaren Vertriebs- und Marktbearbeitungsstrategie.
+              </p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-label">Beispielprojekt 04</div>
+              <h3 class="project-title">Start-up Konzept &amp; Projektentwicklung</h3>
+              <div class="project-pill-row">
+                <span class="project-pill">Geschäftsmodell</span>
+                <span class="project-pill">Markteintritt</span>
+                <span class="project-pill">Projektentwicklung</span>
+              </div>
+              <p>
+                Entwicklung neuer Produkt- und Geschäftsideen vom Konzept über die wirtschaftliche Strukturierung bis zur Vorbereitung von Kooperations- und Umsetzungsprojekten mit Industriepartnern.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="kontakt">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-title-block">
+              <div class="section-eyebrow">Kontakt</div>
+              <h2 class="section-title">Lassen Sie uns über Ihr Setup sprechen.</h2>
+            </div>
+            <p class="section-sub">
+              Eine kurze, fokussierte Abstimmung reicht, um zu klären, ob und wie ich Sie unterstützen kann – telefonisch oder per Videocall.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <form class="contact-form" action="https://formspree.io/f/mqelyqpw" method="POST">
+              <div class="contact-note">Schreiben Sie mir kurz Ihr Anliegen – ich melde mich zeitnah zurück.</div>
+
+              <input type="hidden" name="_subject" value="Neue Anfrage über glanz-consulting.de" />
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+              <div class="field">
+                <label class="field-label" for="name">Name</label>
+                <input class="field-input" id="name" name="name" type="text" placeholder="Ihr Name / Unternehmen" required />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="email">E-Mail</label>
+                <input class="field-input" id="email" name="email" type="email" placeholder="Ihre E-Mail-Adresse" required />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="topic">Thema</label>
+                <input class="field-input" id="topic" name="topic" type="text" placeholder="z. B. Produktportfolio, Tür &amp; Tor, Skalierung" />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="message">Nachricht</label>
+                <textarea class="field-textarea" id="message" name="message" placeholder="Worum geht es? Gern in 3–5 Sätzen." required></textarea>
+              </div>
+
+              <button class="btn-primary" type="submit" style="width: 100%;">Anfrage senden</button>
+              <p style="margin-top:0.6rem; font-size:0.8rem; color:#bfbfbf;">
+                Mit dem Absenden des Formulars erklären Sie sich mit der Verarbeitung Ihrer Daten gemäß
+                <a href="datenschutz.html" style="color:#00e5ff;">Datenschutzerklärung</a>
+                sowie mit der <a href="widerruf.html" style="color:#00e5ff;">Widerrufsbelehrung</a> einverstanden.
+              </p>
+
+              <label style="font-size:0.8rem; color:#bfbfbf; display:block; margin-top:6px;">
+                <input type="checkbox" required>
+                Ich habe die Datenschutzerklärung und die Widerrufsbelehrung gelesen und akzeptiere diese.
+              </label>
+            </form>
+
+            <div id="contact-success" style="display:none; padding:1.2rem; border:1px solid rgba(0,229,255,0.25); border-radius:14px; background:rgba(17,24,39,0.55);">
+              <strong>Vielen Dank für Ihre Anfrage.</strong><br/>
+              Ich melde mich zeitnah persönlich bei Ihnen zurück.
+            </div>
+
+            <div class="contact-meta">
+              <p style="margin-bottom:0.6rem;">
+                <strong>Direkter Kontakt</strong><br/>
+                Ein kurzes, unverbindliches Erstgespräch – telefonisch oder digital.<br/>
+                Ohne Vorbereitung, ohne Verpflichtung.
+              </p>
+
+              <p style="margin-bottom:0.6rem;">
+                <strong>Wie läuft das Erstgespräch ab?</strong><br/>
+                • 30–45 Minuten persönlicher Austausch<br/>
+                • Fokus auf Ihrer konkreten Situation und Ihren Zielen<br/>
+                • Klare Einschätzung, ob und wie ich unterstützen kann
+              </p>
+
+              <p>
+                Keine Standardfolien, kein „Beraterdeutsch“.<br/>
+                Stattdessen eine klare, ehrliche Sicht von außen – mit Tiefe in Produkt, Technik und Struktur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+</main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div>© <span id="year"></span> – Michael Glanz | Strategische Beratung</div>
+          <div>Fokus: Produkte, Innovation, Start-up-Beratung, Skalierung &amp; Struktur.</div>
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+<a href="impressum.html">Impressum</a>
+<a href="datenschutz.html">Datenschutz</a>
+<a href="agb.html">AGB</a>
+<a href="widerruf.html">Widerruf</a>
+</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Jahr im Footer setzen
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Mobile Navigation
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (navToggle && navLinks) {
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+        });
+      });
+    }
+
+    // Formspree: Danke-Message ohne neue Seite (Formular wird nach Erfolg ausgeblendet)
+    const contactForm = document.querySelector(".contact-form");
+    const contactSuccess = document.getElementById("contact-success");
+
+    if (contactForm && contactSuccess) {
+      contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: contactForm.method,
+            body: new FormData(contactForm),
+            headers: { Accept: "application/json" },
+          });
+
+          if (response.ok) {
+            contactForm.style.display = "none";
+            contactSuccess.style.display = "block";
+          } else {
+            alert("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+          }
+        } catch (err) {
+          alert("Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        }
+      });
+    }
+  </script>
+</body>
+</html>
