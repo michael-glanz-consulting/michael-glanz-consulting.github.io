@@ -1,19 +1,15 @@
-Unternehmensberatung Glanz – Website-Paket
-==========================================
+Unternehmensberatung Glanz – vollständige HTML-Website
+=====================================================
 
-Komplettes Website-Paket für GitHub Pages.
+Enthalten:
+- komplette Website
+- Publikation 01: KI trifft das Handwerk – Menschen. Können. Zukunft. (17 Seiten, HTML-Leseansicht)
+- Publikation 02: Verantwortung in der Transformation (HTML-Leseansicht)
+- Publikation 03: KI trifft die Industrie – Eine neue Logik der Unternehmensentwicklung (HTML-Leseansicht)
+- CSS, JavaScript und Bildassets
 
-Enthalten sind:
-- alle zentralen HTML-Seiten
-- CSS und JavaScript
-- Portraitbild
-- bestehende Publikations-PDFs
-- neue Publikation KI trifft die Industrie
-- aktualisierte Publikationsübersicht
-
-Wichtig:
-Falls die lokal nochmals korrigierte finale PDF 'KI trifft die Industrie' von der hier
-enthaltenen Fassung abweicht, bitte nur diese Datei ersetzen:
-assets/downloads/KI-trifft-die-Industrie.pdf
+Keine PDF-Downloads sind verlinkt.
+Die Publikationen werden direkt im Browser als HTML-Leseansichten dargestellt.
 
 Interne Linkprüfung: OK
+PDF-Verweise: keine
