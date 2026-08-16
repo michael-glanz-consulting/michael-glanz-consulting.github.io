@@ -1,15 +1,12 @@
-Unternehmensberatung Glanz – vollständige HTML-Website
-=====================================================
+Unternehmensberatung Glanz – finale HTML-Website
+===============================================
 
 Enthalten:
 - komplette Website
-- Publikation 01: KI trifft das Handwerk – Menschen. Können. Zukunft. (17 Seiten, HTML-Leseansicht)
-- Publikation 02: Verantwortung in der Transformation (HTML-Leseansicht)
-- Publikation 03: KI trifft die Industrie – Eine neue Logik der Unternehmensentwicklung (HTML-Leseansicht)
-- CSS, JavaScript und Bildassets
+- KI trifft das Handwerk – Menschen. Können. Zukunft.
+- Verantwortung in der Transformation
+- KI trifft die Industrie – saubere Masterfassung
 
-Keine PDF-Downloads sind verlinkt.
-Die Publikationen werden direkt im Browser als HTML-Leseansichten dargestellt.
-
+Alle Publikationen sind als HTML-Leseansichten integriert.
 Interne Linkprüfung: OK
 PDF-Verweise: keine
