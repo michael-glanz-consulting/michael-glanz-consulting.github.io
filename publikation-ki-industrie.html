@@ -3,109 +3,196 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. | Michael Glanz</title>
-  <meta name="description" content="KI trifft die Industrie – eine neue Logik der Unternehmensentwicklung.">
+  <title>KI trifft die Industrie – Publikation ansehen | Michael Glanz</title>
+  <meta name="description" content="KI trifft die Industrie – Eine neue Logik der Unternehmensentwicklung. Publikation direkt im Browser ansehen.">
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/site.js"></script>
+  <style>
+    html { scroll-behavior:smooth; }
+    .reader-bar {
+      background:#0f1f30;
+      color:#fff;
+      padding:22px 0;
+      position:sticky;
+      top:0;
+      z-index:40;
+      box-shadow:0 6px 20px rgba(0,0,0,.12);
+    }
+    .reader-bar .wrap {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+    .reader-title h1 {
+      margin:0;
+      color:#fff;
+      font-size:clamp(1.15rem,2vw,1.55rem);
+    }
+    .reader-title p {
+      margin:5px 0 0;
+      color:#cfd9e2;
+      font-size:.95rem;
+    }
+    .reader-back {
+      display:inline-flex;
+      align-items:center;
+      padding:12px 17px;
+      border:1px solid rgba(255,255,255,.7);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .reader-back:hover { background:#fff; color:#0f1f30; }
+    .publication-reader {
+      background:#e7e5df;
+      padding:42px 14px 28px;
+    }
+    .publication-page {
+      width:min(100%, 960px);
+      margin:0 auto 32px;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(15,31,48,.16);
+    }
+    .publication-page img {
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .reader-return {
+      background:#e7e5df;
+      padding:8px 16px 58px;
+      text-align:center;
+    }
+    .reader-return a {
+      display:inline-block;
+      background:#0f1f30;
+      color:#fff;
+      padding:14px 22px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    @media(max-width:720px) {
+      .reader-bar { position:static; }
+      .reader-bar .wrap { display:block; }
+      .reader-back { margin-top:16px; }
+      .publication-reader { padding:20px 7px 18px; }
+      .publication-page { margin-bottom:16px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html"><strong>MICHAEL GLANZ</strong><span>UNTERNEHMENSBERATUNG</span></a>
+      <a class="brand" href="index.html">
+        <strong>MICHAEL GLANZ</strong>
+        <span>UNTERNEHMENSBERATUNG</span>
+      </a>
       <button type="button" class="menu-button" aria-label="Navigation öffnen" aria-expanded="false">☰</button>
       <nav class="main-nav" aria-label="Hauptnavigation">
-        <a href="index.html">Start</a><a href="ueber-mich.html">Über mich</a><a href="beratung.html">Was ich begleite</a><a href="initiativen.html">Initiativen</a><a class="active" href="publikationen.html">Publikationen</a><a href="kontakt.html">Kontakt</a>
+        <a href="index.html">Start</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="beratung.html">Was ich begleite</a>
+        <a href="initiativen.html">Initiativen</a>
+        <a class="active" href="publikationen.html">Publikationen</a>
+        <a href="kontakt.html">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="reader-bar">
       <div class="wrap">
-        <p class="eyebrow">Publikation 03 · KI trifft die Industrie</p>
-        <h1>KI trifft die Industrie<em>Eine neue Logik der Unternehmensentwicklung.</em></h1>
-        <p class="lead narrow">Zukunft vorausdenken, virtuell modellieren, mit KI kritisch spiegeln, Reifegrad erhöhen und Menschen befähigen.</p>
-      </div>
-    </section>
-
-    <section class="section soft">
-      <div class="wrap">
-        <div class="publication-reader-head">
-          <div>
-            <p class="eyebrow">Publikation lesen</p>
-            <h2 class="section-title">Die vollständige Publikation direkt hier ansehen.</h2>
-          </div>
-          <div class="publication-reader-meta">12 Seiten · Online-Ansicht</div>
+        <div class="reader-title">
+          <h1>KI trifft die Industrie</h1>
+          <p>Eine neue Logik der Unternehmensentwicklung · Publikation 03</p>
         </div>
-        <p class="publication-note">Die Publikation wird Seite für Seite direkt auf der Website dargestellt. Es gibt keinen PDF-Download.</p>
+        <a class="reader-back" href="publikationen.html">← Zurück zur Website</a>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap publication-pages">
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-01.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 1" loading="eager">
-          <figcaption>Seite 1 von 12</figcaption>
+    <section class="publication-reader" aria-label="Publikation KI trifft die Industrie">
+
+        <figure class="publication-page" id="seite-1">
+          <img src="assets/publications/ki-industrie/page-01.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 1"
+               loading="eager">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-02.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 2" loading="lazy">
-          <figcaption>Seite 2 von 12</figcaption>
+        <figure class="publication-page" id="seite-2">
+          <img src="assets/publications/ki-industrie/page-02.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 2"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-03.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 3" loading="lazy">
-          <figcaption>Seite 3 von 12</figcaption>
+        <figure class="publication-page" id="seite-3">
+          <img src="assets/publications/ki-industrie/page-03.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 3"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-04.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 4" loading="lazy">
-          <figcaption>Seite 4 von 12</figcaption>
+        <figure class="publication-page" id="seite-4">
+          <img src="assets/publications/ki-industrie/page-04.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 4"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-05.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 5" loading="lazy">
-          <figcaption>Seite 5 von 12</figcaption>
+        <figure class="publication-page" id="seite-5">
+          <img src="assets/publications/ki-industrie/page-05.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 5"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-06.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 6" loading="lazy">
-          <figcaption>Seite 6 von 12</figcaption>
+        <figure class="publication-page" id="seite-6">
+          <img src="assets/publications/ki-industrie/page-06.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 6"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-07.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 7" loading="lazy">
-          <figcaption>Seite 7 von 12</figcaption>
+        <figure class="publication-page" id="seite-7">
+          <img src="assets/publications/ki-industrie/page-07.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 7"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-08.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 8" loading="lazy">
-          <figcaption>Seite 8 von 12</figcaption>
+        <figure class="publication-page" id="seite-8">
+          <img src="assets/publications/ki-industrie/page-08.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 8"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-09.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 9" loading="lazy">
-          <figcaption>Seite 9 von 12</figcaption>
+        <figure class="publication-page" id="seite-9">
+          <img src="assets/publications/ki-industrie/page-09.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 9"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-10.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 10" loading="lazy">
-          <figcaption>Seite 10 von 12</figcaption>
+        <figure class="publication-page" id="seite-10">
+          <img src="assets/publications/ki-industrie/page-10.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 10"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-11.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 11" loading="lazy">
-          <figcaption>Seite 11 von 12</figcaption>
+        <figure class="publication-page" id="seite-11">
+          <img src="assets/publications/ki-industrie/page-11.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 11"
+               loading="lazy">
         </figure>
-        <figure class="publication-page">
-          <img src="assets/publications/ki-industrie/page-12.jpg" alt="KI trifft die Industrie Eine neue Logik der Unternehmensentwicklung. – Seite 12" loading="lazy">
-          <figcaption>Seite 12 von 12</figcaption>
+        <figure class="publication-page" id="seite-12">
+          <img src="assets/publications/ki-industrie/page-12.jpg"
+               alt="KI trifft die Industrie – Publikationsseite 12"
+               loading="lazy">
         </figure>
-      </div>
     </section>
 
-    <section class="contact-band">
-      <div class="wrap contact-inner">
-        <h2>Sie möchten über die neue Logik der Unternehmensentwicklung sprechen?</h2>
-        <a class="button dark" href="mailto:MichaelGlanz@icloud.com">Kontakt aufnehmen <span>→</span></a>
-      </div>
-    </section>
+    <div class="reader-return">
+      <a href="publikationen.html">← Zurück zur Website</a>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand"><strong>MICHAEL GLANZ</strong><span>Unternehmensberatung</span></div>
-      <nav class="footer-nav" aria-label="Rechtliche Informationen"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></nav>
+      <div class="footer-brand">
+        <strong>MICHAEL GLANZ</strong>
+        <span>Unternehmensberatung</span>
+      </div>
+      <nav class="footer-nav" aria-label="Rechtliche Informationen">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+      </nav>
       <span class="copyright">© 2026 Michael Glanz</span>
     </div>
   </footer>
