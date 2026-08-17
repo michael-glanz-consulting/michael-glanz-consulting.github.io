@@ -3,27 +3,150 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KI trifft das Handwerk - Projektbroschuere</title>
-<meta name="description" content="Projektbroschuere KI trifft das Handwerk - Ein Vorhaben in Planung.">
+<title>KI trifft das Handwerk – Ein Vorhaben in Planung</title>
+<meta name="description" content="Projektbroschüre KI trifft das Handwerk – Pilotregion Kreis Mettmann">
 <style>
-:root{--navy:#17365d;--bg:#ece8e1;--white:#fff;--gold:#b58233}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:#1f2d3d}
-.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);border-bottom:1px solid #d8d4cd;backdrop-filter:blur(8px)}
-.top-inner{max-width:1120px;margin:0 auto;padding:16px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}.title{font-weight:800;color:var(--navy);font-size:18px}.back{color:var(--navy);text-decoration:none;font-size:14px;font-weight:700}.reader{max-width:1120px;margin:0 auto;padding:30px 16px 56px}.page{margin:0 auto 28px;background:#fff;box-shadow:0 9px 30px rgba(17,43,69,.16);width:min(100%,1000px)}.page img{display:block;width:100%;height:auto}.note{text-align:center;font-size:12px;color:#6d747b;margin-top:8px}
-@media(max-width:700px){.top-inner{align-items:flex-start;flex-direction:column}.reader{padding:14px 7px 36px}.page{margin-bottom:14px}}
+:root{--navy:#0d2f66;--green:#3d7c2b;--ink:#161616;--soft:#f3f5f6;--line:#c9d1dc;--page:#fff;--bg:#e9e7e2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--ink)}
+a{color:inherit}.readerbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #ddd;backdrop-filter:blur(8px)}
+.readerbar .inner{max-width:1120px;margin:auto;padding:16px 22px;display:flex;justify-content:space-between;gap:20px;align-items:center}.readerbar strong{color:var(--navy);font-size:18px}.readerbar a{text-decoration:none;color:var(--navy);font-weight:700;font-size:14px}.reader{padding:28px 12px 56px}
+.page{position:relative;width:min(900px,100%);aspect-ratio:1055/1491;margin:0 auto 28px;background:var(--page);box-shadow:0 10px 32px rgba(15,35,55,.14);overflow:hidden;padding:54px 62px}
+.page-no{position:absolute;right:34px;bottom:25px;background:var(--navy);color:#fff;font-size:20px;font-weight:700;min-width:40px;height:40px;display:grid;place-items:center;padding:0 8px}
+h1,h2,h3,p{margin-top:0}.title{font-size:45px;line-height:.98;letter-spacing:.01em;color:var(--navy);font-weight:900;margin:0}.subtitle{font-size:24px;line-height:1.16;color:var(--green);font-weight:800;margin:14px 0 18px}.body{font-size:18px;line-height:1.38}.small{font-size:14px;line-height:1.35}.strong{font-weight:800}.navy{color:var(--navy)}.green{color:var(--green)}
+.section-title{font-size:39px;line-height:1.05;color:var(--navy);font-weight:900;margin-bottom:10px}.section-kicker{font-size:22px;line-height:1.15;color:var(--green);font-weight:800;margin-bottom:22px}.rule{height:1px;background:#d4d9df;margin:16px 0}.pill{border:1.4px solid #99a8bb;border-radius:10px;padding:14px 18px;display:flex;gap:16px;align-items:center;font-size:17px;font-weight:700;color:var(--navy)}
+.svg-icon{width:54px;height:54px;flex:0 0 auto}.svg-icon circle,.svg-icon path,.svg-icon line,.svg-icon polyline,.svg-icon rect{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.icon-navy{color:var(--navy)}.icon-green{color:var(--green)}
+/* cover */.cover{padding:54px 62px 42px}.cover .title{font-size:58px;max-width:520px}.cover .subtitle{font-size:24px}.cover-copy{position:relative;z-index:2;width:56%}.cover-photo{position:absolute;right:0;top:200px;width:66%;height:76%;object-fit:cover;object-position:35% 45%;mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%)}.cover-tags{position:absolute;left:62px;bottom:74px;display:grid;gap:14px;z-index:3}.cover-tag{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:800;color:var(--navy)}.cover-tag .svg-icon{width:34px;height:34px;color:var(--green)}
+/* page2 */.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid #8fa0b6;border-radius:10px;overflow:hidden;margin:18px 0 26px}.compare .cell{padding:18px;text-align:center;min-height:175px;display:flex;flex-direction:column;align-items:center;justify-content:center}.compare .cell+.cell{border-left:1.5px solid #8fa0b6}.compare p{font-size:18px;line-height:1.35;margin:10px 0 0}.journey-title{font-size:18px;line-height:1.2;color:var(--navy);font-weight:900;margin:0 0 18px}.journey{display:flex;align-items:flex-start;justify-content:space-between;gap:7px}.journey .item{width:18%;text-align:center;color:var(--navy);font-size:12px;font-weight:900}.journey .circle{width:68px;height:68px;margin:0 auto 9px;border:1.5px solid #8fa0b6;border-radius:50%;display:grid;place-items:center;background:white}.journey .svg-icon{width:42px;height:42px}.journey .item:nth-child(2) .svg-icon,.journey .item:nth-child(5) .svg-icon{color:var(--green)}.journey-line{height:1px;border-top:2px dotted #89a686;flex:1;margin-top:34px}
+/* p3 */.goal-list{display:grid;gap:17px;margin-top:8px}.goal{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:start}.goal .circle{width:58px;height:58px;border:1.5px solid #8fa0b6;border-radius:50%;display:grid;place-items:center}.goal h3{font-size:19px;color:var(--green);margin:0 0 2px}.goal p{font-size:14px;line-height:1.3;margin:0}.photo-strip{position:absolute;left:46px;right:46px;bottom:55px;height:260px;object-fit:cover;border-radius:5px}
+/* p4 */.bullets{font-size:15px;line-height:1.55;margin:0;padding-left:22px}.bullets li::marker{color:var(--green)}.building{position:absolute;left:0;right:0;bottom:0;width:100%;height:39%;object-fit:cover}.p4 .pill{margin-top:14px}.p4 .note{font-size:13px;line-height:1.25;margin-top:12px;width:72%}
+/* p5 */.timeline{position:relative;margin-top:12px;padding-left:78px}.timeline:before{content:"";position:absolute;left:31px;top:30px;bottom:30px;border-left:2px solid #90a0b5}.step{position:relative;display:grid;grid-template-columns:74px 1fr;gap:16px;margin:0 0 22px}.num{position:absolute;left:-78px;top:1px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:900;font-size:22px}.step:nth-child(even) .num{background:var(--green)}.step .circle{width:64px;height:64px;border:1.5px solid #93a3b7;border-radius:50%;display:grid;place-items:center}.step h3{font-size:20px;color:var(--navy);margin:0 0 4px}.step:nth-child(even) h3{color:var(--green)}.step p{font-size:15px;line-height:1.25;margin:0}
+/* p6 */.profile{display:grid;grid-template-columns:42% 1fr;gap:34px;align-items:center;margin-top:15px}.profile img{width:100%;height:270px;object-fit:cover;border-radius:4px}.profile h2{color:var(--navy);font-size:25px;margin:0 0 3px}.profile h3{color:var(--green);font-size:15px;margin:0 0 14px}.profile p{font-size:14px;line-height:1.32}.rolecards{display:grid;gap:10px;margin-top:20px}.role{border:1.3px solid #a7b3c1;border-radius:8px;padding:10px 14px;display:grid;grid-template-columns:68px 1fr;gap:14px;align-items:center}.role .svg-icon{width:50px;height:50px}.role h3{font-size:17px;color:var(--navy);margin:0 0 1px}.role p{font-size:12px;line-height:1.2;margin:0}.footnote{font-size:12px;font-weight:700;color:var(--navy);margin-top:9px}
+/* p7 */.network-copy{font-size:18px;line-height:1.35;width:75%;margin-top:14px}.network{position:relative;height:650px;margin-top:10px}.hub{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:280px;height:170px;border:1.5px solid #97a8bb;border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--navy);font-size:30px;font-weight:900;background:#fff}.node{position:absolute;width:120px;text-align:center;color:var(--navy);font-size:13px;font-weight:800}.node .circle{width:86px;height:86px;border:1.4px solid #8ea0b5;border-radius:50%;display:grid;place-items:center;margin:0 auto 8px;background:white}.node .svg-icon{width:48px;height:48px}.node.green .svg-icon{color:var(--green)}.n1{left:39%;top:4%}.n2{right:7%;top:21%}.n3{right:2%;top:56%}.n4{left:64%;bottom:1%}.n5{left:18%;bottom:1%}.n6{left:1%;top:56%}.n7{left:8%;top:21%}.network:before{content:"";position:absolute;left:13%;right:13%;top:12%;bottom:8%;border:2px dotted #9aa7b6;border-radius:50%}
+/* p8 */.status-list{display:grid;gap:13px;margin-top:12px}.status{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:start}.check{width:42px;height:42px;border:1.5px solid #8da0b5;border-radius:50%;display:grid;place-items:center;color:var(--green);font-size:26px;font-weight:900}.status h3{font-size:16px;color:var(--green);margin:0 0 2px}.status p{font-size:12px;line-height:1.25;margin:0}.next{border:1.5px solid #8fa0b6;border-radius:9px;padding:14px 20px;display:flex;align-items:center;gap:18px;color:var(--navy);font-size:20px;font-weight:900;margin-top:20px}.next .svg-icon{width:60px;height:60px}.town{position:absolute;left:0;right:0;bottom:0;width:100%;height:25%;object-fit:cover}
+@media(max-width:700px){.readerbar .inner{align-items:flex-start;flex-direction:column}.page{padding:36px 28px;aspect-ratio:auto;min-height:1250px}.cover{min-height:1250px}.cover .title{font-size:46px}.title{font-size:38px}.section-title{font-size:32px}.cover-copy{width:72%}.cover-photo{width:80%;top:270px;height:65%}.compare{grid-template-columns:1fr}.compare .cell+.cell{border-left:0;border-top:1.5px solid #8fa0b6}.journey{flex-wrap:wrap}.journey-line{display:none}.journey .item{width:30%;margin-bottom:18px}.photo-strip{left:22px;right:22px}.profile{grid-template-columns:1fr}.profile img{height:220px;width:52%}.network{transform:scale(.8);transform-origin:top left;width:125%;height:620px}}
 </style>
 </head>
 <body>
-<header class="top"><div class="top-inner"><div class="title">KI trifft das Handwerk · Projektbroschuere</div><a class="back" href="https://www.glanz-consulting.de/">Zur Unternehmensberatung Glanz</a></div></header>
-<main class="reader" aria-label="Projektbroschuere KI trifft das Handwerk">
-<figure class="page"><img src="assets/ktdh-broschuere/page-1.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 1" loading="eager"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-2.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 2" loading="lazy"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-3.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 3" loading="lazy"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-4.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 4" loading="lazy"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-5.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 5" loading="lazy"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-6.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 6" loading="lazy"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-7.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 7" loading="lazy"></figure>
-<figure class="page"><img src="assets/ktdh-broschuere/page-8.png" alt="KI trifft das Handwerk - Projektbroschuere Seite 8" loading="lazy"></figure>
-<p class="note">Webansicht der Projektbroschuere · Originalgestaltung, hochaufloesend aus der PDF gerendert.</p>
+<header class="readerbar"><div class="inner"><strong>KI trifft das Handwerk · Projektbroschüre</strong><a href="index.html">Zur Unternehmensberatung Glanz</a></div></header>
+<main class="reader">
+<section class="page cover" id="seite-1">
+  <div class="cover-copy">
+    <h1 class="title">KI TRIFFT<br>DAS HANDWERK</h1>
+    <div class="subtitle">Ein Vorhaben in Planung</div>
+    <p class="body navy" style="font-size:18px;font-weight:700">Digitale Berufsorientierung,<br>Zukunftstechnologien.<br>Ausbildung stärken.</p>
+    <p class="small navy strong" style="margin-top:22px">Pilotregion Kreis Mettmann</p>
+  </div>
+  <img class="cover-photo" src="assets/ktdh-vb/cover-youth.jpg" alt="Junge Menschen arbeiten mit einem digitalen Modell">
+  <div class="cover-tags">
+    <div class="cover-tag"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="13"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/></svg>Zukunft entdecken.</div>
+    <div class="cover-tag"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="10"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/></svg>Berufe erleben.</div>
+    <div class="cover-tag"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M8 24l24-12 24 12-24 12zM18 29v15c8 5 20 5 28 0V29M52 27v17"/></svg>Ausbildung ermöglichen.</div>
+  </div>
+  <div class="page-no">1</div>
+</section>
+
+<section class="page" id="seite-2">
+  <h2 class="section-title">1 · Warum dieses Projekt?</h2>
+  <div class="section-kicker">Berufsorientierung digital und modern denken</div>
+  <p class="body">Viele junge Menschen kennen die beruflichen Möglichkeiten<br>im Handwerk und in der Industrie kaum ausreichend.</p>
+  <p class="body">Gleichzeitig verändern Digitalisierung, Künstliche Intelligenz<br>und neue Technologien die Arbeitswelt.</p>
+  <p class="body"><strong>„KI trifft das Handwerk“ verbindet diese beiden<br>Entwicklungen</strong> – moderne Berufsorientierung mit einem<br>realistischen Blick auf die Arbeitswelt von morgen.</p>
+  <div class="compare">
+    <div class="cell"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><circle cx="32" cy="18" r="9"/><path d="M15 51v-7c0-11 8-18 17-18s17 7 17 18v7z"/></svg><p>Nicht alle Fähigkeiten.<br>Nicht alle Interessen.</p></div>
+    <div class="cell"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><path d="M18 16l8 8-12 12-8-8zM28 22l8-8 8 8-8 8M32 32l16 16M44 44l7-7M12 51l13-13"/></svg><p>Nicht alle lernen über<br>die klassische Lehrwerkstatt.</p></div>
+  </div>
+  <div class="journey-title">Sondern an einer neuen Schnittstelle zwischen<br>Schule, Arbeitswelt und Ausbildung.</div>
+  <div class="journey">
+    <div class="item"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M8 24l24-12 24 12-24 12zM18 29v15c8 5 20 5 28 0V29"/></svg></div>ERLEBEN</div><div class="journey-line"></div>
+    <div class="item"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="10"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/></svg></div>ENTDECKEN</div><div class="journey-line"></div>
+    <div class="item"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="19"/><path d="M41 23L35 35l-12 6 6-12z"/></svg></div>ORIENTIEREN</div><div class="journey-line"></div>
+    <div class="item"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M18 48c-3-6-2-13 2-18 4-6 4-11 2-16M31 51c3-6 3-12 0-18-3-6-2-13 3-18M45 48c4-5 4-12 1-18-3-5-2-11 2-16"/></svg></div>ERPROBEN</div><div class="journey-line"></div>
+    <div class="item"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M23 42l4-13 14-9 3 3-9 14zM27 29l8 8"/></svg></div>AUSBILDUNG</div>
+  </div>
+  <div class="page-no">2</div>
+</section>
+
+<section class="page" id="seite-3">
+  <h2 class="section-title">2 · Was soll erreicht werden?</h2>
+  <div class="section-kicker">Interesse wecken. Orientierung ermöglichen.<br>Ausbildung stärken.</div>
+  <div class="goal-list">
+    <div class="goal"><div class="circle"><svg class="svg-icon icon-green" viewBox="0 0 64 64"><path d="M32 50S10 38 10 23c0-7 5-12 12-12 5 0 9 3 10 7 2-4 6-7 11-7 7 0 12 5 12 12 0 15-23 27-23 27z"/></svg></div><div><h3>Interesse wecken</h3><p>Junge Menschen frühzeitig für moderne Berufsbilder,<br>Handwerk, Industrie und neue Technologien begeistern.</p></div></div>
+    <div class="goal"><div class="circle"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><circle cx="32" cy="32" r="19"/><path d="M41 23L35 35l-12 6 6-12z"/></svg></div><div><h3>Orientierung erhöhen</h3><p>Eigene Interessen, Talente und berufliche<br>Möglichkeiten besser erkennen.</p></div></div>
+    <div class="goal"><div class="circle"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><circle cx="23" cy="24" r="6"/><circle cx="41" cy="24" r="6"/><circle cx="32" cy="18" r="6"/><path d="M12 49v-8c0-6 5-10 11-10h2M52 49v-8c0-6-5-10-11-10h-2M21 49v-9c0-7 5-12 11-12s11 5 11 12v9z"/></svg></div><div><h3>Übergänge schaffen</h3><p>Aus ersten Erlebnissen konkrete Wege zu Betrieben,<br>Bildungseinrichtungen und Ausbildung entwickeln.</p></div></div>
+    <div class="goal"><div class="circle"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><path d="M10 50h44M15 45V33M27 45V25M39 45V18M51 45V10"/><path d="M13 28l10-8 10 2 14-12"/></svg></div><div><h3>Ausbildung stärken</h3><p>Unternehmen und Institutionen dabei unterstützen,<br>potenzielle Nachwuchskräfte früher zu erreichen.</p></div></div>
+  </div>
+  <img class="photo-strip" src="assets/ktdh-vb/page3-photos.jpg" alt="Digitale und virtuelle Lernanwendungen">
+  <div class="page-no">3</div>
+</section>
+
+<section class="page p4" id="seite-4">
+  <h2 class="section-title">3 · Das geplante Pilotmodell</h2>
+  <div class="section-kicker">Ein zentraler Lern- und Erlebnisort<br>im Kreis Mettmann</div>
+  <p class="body" style="font-size:16px">Für die Pilotphase ist ein zentraler Standort<br>mit maximal <strong>500 m² Bildungsfläche</strong> vorgesehen.</p>
+  <p class="small strong navy" style="margin-bottom:6px">Geplant sind:</p>
+  <ul class="bullets"><li>vier getrennte Erlebnisräume</li><li>ein eigener Bereich für Betrieb und Vernetzung</li><li>digitale Lernräume und Informationssysteme</li><li>Simulationen, VR/XR und KI-gestützte Anwendungen</li><li>mobile Demonstratoren und reale Anwendungsbeispiele</li></ul>
+  <div class="pill"><svg class="svg-icon icon-green" viewBox="0 0 64 64"><circle cx="32" cy="32" r="22"/><path d="M21 32l7 7 15-16"/></svg>Keine klassischen Werkstätten und keine<br>traditionellen Produktionsmaschinen.</div>
+  <p class="note">Praktische Erfahrungen erfolgen gemeinsam mit<br>Partnerbetrieben, Bildungsanbietern und externen<br>Ausbildungswerkstätten.</p>
+  <img class="building" src="assets/ktdh-vb/page4-building.jpg" alt="Visualisierung eines möglichen Lern- und Erlebniszentrums">
+  <div class="page-no">4</div>
+</section>
+
+<section class="page" id="seite-5">
+  <h2 class="section-title">4 · Wie kann ein solches<br>Projekt entstehen?</h2>
+  <div class="section-kicker">Von der Idee zum tragfähigen Pilotprojekt</div>
+  <div class="timeline">
+    <div class="step"><div class="num">1</div><div class="circle"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><path d="M24 44h16M27 50h10M32 10c-11 0-19 8-19 18 0 7 4 11 9 15 2 2 3 4 3 7h14c0-3 1-5 3-7 5-4 9-8 9-15 0-10-8-18-19-18z"/></svg></div><div><h3>Idee &amp; Projektarchitektur</h3><p>Zielbild, Bildungslogik und<br>Gesamtmodell entwickeln.</p></div></div>
+    <div class="step"><div class="num">2</div><div class="circle"><svg class="svg-icon icon-green" viewBox="0 0 64 64"><circle cx="23" cy="23" r="7"/><circle cx="41" cy="23" r="7"/><path d="M10 49v-7c0-8 6-13 13-13s13 5 13 13v7M28 49v-7c0-8 6-13 13-13s13 5 13 13v7"/></svg></div><div><h3>Partner &amp; Träger</h3><p>Bildung, Regionen, Handwerk, Industrie<br>und geeignete Träger zusammenbringen.</p></div></div>
+    <div class="step"><div class="num">3</div><div class="circle"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><rect x="14" y="9" width="29" height="39" rx="2"/><path d="M22 18h13M22 26h13M22 34h8"/><circle cx="45" cy="44" r="9"/><path d="M41 44l3 3 6-7"/></svg></div><div><h3>Finanzierung &amp; Organisation</h3><p>Trägerschaft, Fördermöglichkeiten,<br>Standort und operative Verantwortung klären.</p></div></div>
+    <div class="step"><div class="num">4</div><div class="circle"><svg class="svg-icon icon-green" viewBox="0 0 64 64"><circle cx="32" cy="32" r="10"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M50 14l-6 6M20 44l-6 6"/></svg></div><div><h3>Pilot aufbauen</h3><p>Angebotsbausteine schaffen, Standort<br>realisieren und gemeinsam mit Schulen erproben.</p></div></div>
+    <div class="step"><div class="num">5</div><div class="circle"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><circle cx="32" cy="32" r="21"/><path d="M21 32l7 7 15-16"/></svg></div><div><h3>Verstetigen</h3><p>Erfahrungen sichern und eine langfristig<br>tragfähige Betriebsstruktur aufbauen.</p></div></div>
+  </div>
+  <div class="page-no">5</div>
+</section>
+
+<section class="page" id="seite-6">
+  <h2 class="section-title">5 · Rollen und<br>Verantwortlichkeiten</h2>
+  <div class="section-kicker">Klare Verantwortung – gemeinsam entwickeln</div>
+  <div class="profile"><img src="assets/ktdh-vb/page6-portrait.jpg" alt="Michael Glanz"><div><h2>Michael Glanz</h2><h3>Initiator und Projektarchitekt<br>Unternehmensberatung Glanz</h3><p>Entwicklung der Projektidee,<br>strategische Gesamtarchitektur,<br>Aufbau der Partnerschaft und<br>Begleitung der Entwicklung<br>und Pilotphase.</p></div></div>
+  <div class="rolecards">
+    <div class="role"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><path d="M8 24h48L32 10zM13 27v22M23 27v22M41 27v22M51 27v22M8 51h48"/></svg><div><h3>Projektträger</h3><p><strong>Geeignete institutionelle Organisation</strong><br>Verantwortung für Governance, rechtliche<br>Rahmenbedingungen und strategische Ausrichtung.</p></div></div>
+    <div class="role"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><circle cx="32" cy="18" r="9"/><path d="M14 51v-8c0-11 8-18 18-18s18 7 18 18v8z"/></svg><div><h3>Operative Projektleitung</h3><p><strong>Beim Träger oder separat organisiert</strong><br>Projektplanung, Partnerkoordination, Standort,<br>Beschaffung, Personal und Projektcontrolling.</p></div></div>
+    <div class="role"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><path d="M8 30L32 11l24 19M14 27v25h36V27M26 52V37h12v15"/></svg><div><h3>Betreibergesellschaften</h3><p><strong>Langfristige institutionelle Struktur</strong><br>Dauerhafter Betrieb, Personal, Organisation<br>und Weiterentwicklung.</p></div></div>
+  </div>
+  <div class="footnote">Die konkrete Träger- und Betriebsstruktur wird gemeinsam<br>mit den beteiligten Partnern entwickelt.</div>
+  <div class="page-no">6</div>
+</section>
+
+<section class="page" id="seite-7">
+  <h2 class="section-title">6 · Gemeinsam statt nebeneinander</h2>
+  <div class="section-kicker">Bestehende Kompetenzen verbinden</div>
+  <p class="network-copy">KTDH soll keine Parallelstruktur schaffen.<br>Das Projekt soll vorhandene Kompetenzen<br>miteinander verbinden.</p>
+  <div class="network">
+    <div class="hub">KI trifft das<br>Handwerk</div>
+    <div class="node n1 green"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M8 24l24-12 24 12-24 12zM18 29v15c8 5 20 5 28 0V29"/></svg></div>Schulen &amp;<br>Bildung</div>
+    <div class="node n2"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="22" cy="25" r="7"/><circle cx="42" cy="25" r="7"/><path d="M9 50v-8c0-8 6-13 13-13s13 5 13 13v8M29 50v-8c0-8 6-13 13-13s13 5 13 13v8"/></svg></div>Kammern</div>
+    <div class="node n3"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M8 52V28l15 8V24l14 8V19l19 10v23zM15 46h6M28 46h6M42 46h6"/></svg></div>Industrie &amp;<br>Ausbildungs-<br>betriebe</div>
+    <div class="node n4"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><rect x="12" y="13" width="40" height="32" rx="2"/><path d="M9 51h46M19 21h26M19 29h18M19 37h22"/></svg></div>Technologie-<br>partner</div>
+    <div class="node n5"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><circle cx="18" cy="22" r="5"/><circle cx="46" cy="22" r="5"/><circle cx="32" cy="42" r="5"/><path d="M22 24l20 0M20 26l9 12M44 26l-9 12"/></svg></div>MINT- und<br>Bildungsnetzwerke</div>
+    <div class="node n6"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M18 16l8 8-12 12-8-8zM28 22l8-8 8 8-8 8M32 32l16 16M44 44l7-7M12 51l13-13"/></svg></div>Handwerk &amp;<br>Innungen</div>
+    <div class="node n7 green"><div class="circle"><svg class="svg-icon" viewBox="0 0 64 64"><path d="M10 52V25h44v27M18 25V13h12v12M36 25V8h10v17M24 52V39h10v13M40 52V34h8v18"/></svg></div>Kreis &amp;<br>Kommunen</div>
+  </div>
+  <div class="page-no">7</div>
+</section>
+
+<section class="page" id="seite-8">
+  <h2 class="section-title">7 · Wo stehen wir heute?</h2>
+  <div class="section-kicker">Konzipiert – und jetzt gemeinsam weiterentwickeln</div>
+  <div class="status-list">
+    <div class="status"><div class="check">✓</div><div><h3>Konzept entwickelt</h3><p>Bildungs- und Übergangslogik sowie Grundmodell sind ausgearbeitet.</p></div></div>
+    <div class="status"><div class="check">✓</div><div><h3>Pilotregion definiert</h3><p>Der erste Pilot ist für den Kreis Mettmann vorgesehen.</p></div></div>
+    <div class="status"><div class="check">✓</div><div><h3>Inhalte vorbereitet</h3><p>Bildungsmodule, Website, Broschüren und Partnerunterlagen liegen vor.</p></div></div>
+    <div class="status"><div class="check">✓</div><div><h3>Regionale Validierung</h3><p>Gespräche mit Institutionen und möglichen Partnern<br>werden geführt und vorbereitet.</p></div></div>
+    <div class="status"><div class="check">✓</div><div><h3>Träger &amp; Finanzierung</h3><p>Geeignete Trägerschaften und mögliche Förderwege<br>werden im nächsten Schritt konkretisiert.</p></div></div>
+  </div>
+  <div class="next"><svg class="svg-icon icon-navy" viewBox="0 0 64 64"><circle cx="20" cy="24" r="6"/><circle cx="44" cy="24" r="6"/><circle cx="32" cy="18" r="6"/><path d="M8 50v-7c0-7 5-11 12-11h3M56 50v-7c0-7-5-11-12-11h-3M18 50v-8c0-8 6-13 14-13s14 5 14 13v8z"/></svg><div>Der nächste Schritt:<br>Aus einem Konzept gemeinsam<br>ein Pilotprojekt machen.</div></div>
+  <img class="town" src="assets/ktdh-vb/page8-town.jpg" alt="Blick über die Pilotregion Kreis Mettmann">
+  <div class="page-no">8</div>
+</section>
 </main>
 </body></html>
