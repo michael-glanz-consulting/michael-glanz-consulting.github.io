@@ -13,3 +13,8 @@ Status:
 - interne Linkprüfung: OK
 - fehlende Ziele: keine
 - PDF-Verweise: keine
+
+Aktualisierung 2026-08-17:
+- KTDH_Ein_Vorhaben_in_Planung_Broschuere.pdf im Webroot enthalten.
+- Vorgesehene Direktadresse:
+  https://www.glanz-consulting.de/KTDH_Ein_Vorhaben_in_Planung_Broschuere.pdf
